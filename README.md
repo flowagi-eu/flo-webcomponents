@@ -117,7 +117,7 @@ class Explorer extends Flo {
 }
 ```
 
-For testing, the above (`.textContent = JSON.stringify..`) is fine, however, when you're rendering a list of HTML items you want to avoid things like `.textContent` or `.innerHTML` and instead render custom compnents using `.createElement` (see also example/components/list-counters.js) :
+For testing, the above (`.textContent = JSON.stringify..`) is fine, however, when you're rendering a list of HTML items you want to avoid things like `.textContent` or `.innerHTML` and instead render custom components using `.createElement` (see also example/components/list-counters.js) :
 
 ```js
 const container = this.$('.container');
