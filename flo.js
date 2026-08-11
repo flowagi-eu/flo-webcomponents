@@ -44,7 +44,7 @@ if (typeof this.template === "function") {
 
     // ---------- Events ----------
 
-    emit(name, detail = {}) {
+    fire(name, detail = {}) {
 
         this.dispatchEvent(new CustomEvent(name, {
             detail,
@@ -54,14 +54,14 @@ if (typeof this.template === "function") {
 
     }
 
-    on(name, callback) {
-
-        this.addEventListener(name, e => {
-            callback(e.detail, e);
-        });
-
-    }
-
 }
 
+// Flo superclass
 window.Flo = Flo;
+
+// fire() method for firing custom events
+window.fire = (name, detail = {}) => {
+    window.dispatchEvent(new CustomEvent(name, {
+        detail
+    }));
+};
