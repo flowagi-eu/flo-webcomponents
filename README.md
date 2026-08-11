@@ -76,35 +76,37 @@ When adding functions, like a new [Nyno Workflow](https://github.com/flowagi-eu/
 
 ```
 // custom function 
-async workflowLs(prev = "/") {
-  const r = await fetch("http://localhost:9057/api/v1/list-files.nyno", {
-    method: "POST",
-    headers: {
-      Authorization: "Basic " + btoa("john@example.com:my-secure-password"),
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      prev,
-    })
-  });
+class Explorer extends Flo {
+	async workflowLs(prev = "/") {
+	  const r = await fetch("http://localhost:9057/api/v1/list-files.nyno", {
+	    method: "POST",
+	    headers: {
+	      Authorization: "Basic " + btoa("john@example.com:my-secure-password"),
+	      "Content-Type": "application/json"
+	    },
+	    body: JSON.stringify({
+	      prev,
+	    })
+	  });
 
-  this.files = (await r.json()).result.prev;
-}
+	  this.files = (await r.json()).result.prev;
+	}
 
-render() {
-   this.$("#files").textContent = JSON.stringify(this.files);
-}
+	render() {
+	   this.$("#files").textContent = JSON.stringify(this.files);
+	}
 
-async mounted() {
-	const thiz = this;
-	await this.workflowLs();
+	async mounted() {
+		const thiz = this;
+		await this.workflowLs();
 
-	this.$('#txtExplorer').addEventListener('change', async function (e) { 
-		await thiz.workflowLs(e.target.value); 
-	 	thiz.render();
-	});
-	
-	this.render();
+		this.$('#txtExplorer').addEventListener('change', async function (e) { 
+			await thiz.workflowLs(e.target.value); 
+			thiz.render();
+		});
+		
+		this.render();
+	}
 }
 ```
 
