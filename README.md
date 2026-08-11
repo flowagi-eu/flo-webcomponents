@@ -4,7 +4,7 @@ Flo gives you back control over rendering + events (minimal library to extend We
 ![Describe Image Here](/example.png)
 
 ## Extend WebComponents with Flo:
-```
+```js
 class Counter extends Flo {
 
     count = 0;
