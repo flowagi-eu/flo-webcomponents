@@ -22,25 +22,12 @@ class Counter extends Flo {
 
     mounted() {
         this.$("#plus").addEventListener("click", () => {
-
             this.count++;
-
             this.render();
-
-            this.emit("change", {
-                count: this.count
-            });
-
         });
         this.$("#minus").addEventListener("click", () => {
-
             this.count--;
-
             this.render();
-
-            this.emit("change", {
-                count: this.count
-            });
         });
     }
 
