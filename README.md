@@ -98,5 +98,14 @@ render() {
 
 ```
 
+For testing, the above is fine, but when you're rendering a list of HTML items you want to avoid using .innerHTML and instead render custom compnents like this (see also example/components/list-counters.js) :
 
+```
+const container = this.$('.container');
+for (let i = 0; i < 2; i++) {
+  const counter = document.createElement("flo-counter");
+  container.appendChild(counter);
+}
+
+``` 
 
