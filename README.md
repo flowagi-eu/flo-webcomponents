@@ -79,6 +79,13 @@ class Explorer extends Flo {
  
 	files = [];
 
+	template() {
+		return `
+		    <h4>Explorer</h4>
+		    <div id="files"></div>
+		`;
+	}
+
 	// custom function 
 	async workflowLs(prev = "/") {
 	  const r = await fetch("http://localhost:9057/api/v1/list-files.nyno", {
