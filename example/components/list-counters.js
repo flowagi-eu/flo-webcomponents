@@ -42,4 +42,4 @@ class ListCounters extends Flo {
 
 }
 
-customElements.define("list-counters", ListCounters);
+customElements.define("flo-counters", ListCounters);

@@ -50,7 +50,7 @@ class Counter extends Flo {
 </head>
 
 <body>
-    <list-counters></list-counters>
+    <flo-counters></flo-counters>
 
     <script type="module">
         import "./flo.js";
