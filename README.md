@@ -77,6 +77,8 @@ When adding functions, like a new [Nyno Workflow](https://github.com/flowagi-eu/
 ```js
 // custom function 
 class Explorer extends Flo {
+ 
+        files = [];
 
 	async workflowLs(prev = "/") {
 	  const r = await fetch("http://localhost:9057/api/v1/list-files.nyno", {
