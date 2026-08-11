@@ -77,6 +77,7 @@ When adding functions, like a new [Nyno Workflow](https://github.com/flowagi-eu/
 ```js
 // custom function 
 class Explorer extends Flo {
+
 	async workflowLs(prev = "/") {
 	  const r = await fetch("http://localhost:9057/api/v1/list-files.nyno", {
 	    method: "POST",
@@ -97,14 +98,7 @@ class Explorer extends Flo {
 	}
 
 	async mounted() {
-		const thiz = this;
 		await this.workflowLs();
-
-		this.$('#txtExplorer').addEventListener('change', async function (e) { 
-			await thiz.workflowLs(e.target.value); 
-			thiz.render();
-		});
-		
 		this.render();
 	}
 }
