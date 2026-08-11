@@ -91,11 +91,21 @@ async workflowLs(prev = "/") {
   this.files = (await r.json()).result.prev;
 }
 
-
 render() {
    this.$("#files").textContent = JSON.stringify(this.files);
 }
 
+async mounted() {
+	const thiz = this;
+	await this.workflowLs();
+
+	this.$('#txtExplorer').addEventListener('change', async function (e) { 
+		await thiz.workflowLs(e.target.value); 
+	 	thiz.render();
+	});
+	
+	this.render();
+}
 ```
 
 For testing, the above (`.textContent = JSON.stringify..`) is fine, however, when you're rendering a list of HTML items you want to avoid things like `.textContent` or `.innerHTML` and instead render custom compnents using `.createElement` (see also example/components/list-counters.js) :
