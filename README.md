@@ -70,3 +70,33 @@ git clone https://github.com/flowagi-eu/flo-webcomponents
 cd example
 python3 -m http.server 8080
 ```
+
+## Coding Conventions
+When adding functions, like a new [Nyno Workflow](https://github.com/flowagi-eu/nyno), it's recommended to not use return statements, and instead directly set the component's variable(s), so re-rendering is easy:
+
+```
+// custom function 
+async workflowLs(prev = "/") {
+  const r = await fetch("http://localhost:9057/api/v1/list-files.nyno", {
+    method: "POST",
+    headers: {
+      Authorization: "Basic " + btoa("john@example.com:my-secure-password"),
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      prev,
+    })
+  });
+
+  this.files = (await r.json()).result.prev;
+}
+
+
+render() {
+   this.$("#files").textContent = JSON.stringify(this.files);
+}
+
+```
+
+
+
