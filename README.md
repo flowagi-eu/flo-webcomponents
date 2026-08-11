@@ -74,7 +74,7 @@ python3 -m http.server 8080
 ## Coding Conventions
 When adding functions, like a new [Nyno Workflow](https://github.com/flowagi-eu/nyno), it's recommended to not use return statements, and instead directly set the component's variable(s), so re-rendering is easy:
 
-```
+```js
 // custom function 
 class Explorer extends Flo {
 	async workflowLs(prev = "/") {
@@ -112,7 +112,7 @@ class Explorer extends Flo {
 
 For testing, the above (`.textContent = JSON.stringify..`) is fine, however, when you're rendering a list of HTML items you want to avoid things like `.textContent` or `.innerHTML` and instead render custom compnents using `.createElement` (see also example/components/list-counters.js) :
 
-```
+```js
 const container = this.$('.container');
 for (let i = 0; i < 2; i++) {
   const counter = document.createElement("flo-counter");
