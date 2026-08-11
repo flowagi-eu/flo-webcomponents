@@ -1,5 +1,5 @@
 # flo-webcomponents
-Flo gives you back control over rendering + events (minimal library to extend WebComponents, no build tools needed)
+Take back control of rendering + events (minimal library to extend WebComponents, no build tools needed)
 
 
 ## Extend WebComponents with Flo:
