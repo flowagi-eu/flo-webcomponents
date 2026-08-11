@@ -107,7 +107,11 @@ class Explorer extends Flo {
 	}
 
 	async mounted() {
-		await this.workflowLs();
+		(async () => { 
+		  await this.workflowLs(); 
+		  this.render(); 
+		})();
+
 		this.render();
 	}
 }
