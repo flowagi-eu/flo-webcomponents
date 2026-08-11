@@ -1,6 +1,5 @@
 # flo-webcomponents
-Take back control of rendering + events (minimal library to extend WebComponents, no build tools needed)
-
+Take back control of rendering + events using WebComponents with one minimal superclass Flo is a minimal library to extend WebComponents, no build tools needed.
 
 ## Extend WebComponents with Flo:
 ```js
