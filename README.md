@@ -9,33 +9,7 @@ class Counter extends Flo {
 
     count = 0;
 
-    style() {
-
-        return `
-            :host {
-                display:block;
-                width:250px;
-                padding:20px;
-                border:1px solid #ccc;
-                font-family:Arial;
-            }
-
-            button{
-                width:40px;
-            }
-
-            #count{
-                display:inline-block;
-                width:40px;
-                text-align:center;
-                font-size:22px;
-            }
-        `;
-
-    }
-
     template() {
-
         return `
             <h2>Counter</h2>
 
@@ -45,11 +19,9 @@ class Counter extends Flo {
 
             <button id="plus">+</button>
         `;
-
     }
 
     mounted() {
-
         this.$("#plus").addEventListener("click", () => {
 
             this.count++;
@@ -61,7 +33,6 @@ class Counter extends Flo {
             });
 
         });
-
         this.$("#minus").addEventListener("click", () => {
 
             this.count--;
@@ -71,20 +42,13 @@ class Counter extends Flo {
             this.emit("change", {
                 count: this.count
             });
-
         });
-
     }
 
     render() {
-
         this.$("#count").textContent = this.count;
-
     }
-
 }
-
-customElements.define("flo-counter", Counter);
 ```
 
 # Full Example (see also ./example):
