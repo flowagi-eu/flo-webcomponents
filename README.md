@@ -75,11 +75,11 @@ python3 -m http.server 8080
 When adding functions, like a new [Nyno Workflow](https://github.com/flowagi-eu/nyno), it's recommended to not use return statements, and instead directly set the component's variable(s), so re-rendering is easy:
 
 ```js
-// custom function 
 class Explorer extends Flo {
  
 	files = [];
 
+	// custom function 
 	async workflowLs(prev = "/") {
 	  const r = await fetch("http://localhost:9057/api/v1/list-files.nyno", {
 	    method: "POST",
