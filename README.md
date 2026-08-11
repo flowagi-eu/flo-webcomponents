@@ -1,6 +1,8 @@
 # flo-webcomponents
 Flo gives you back control over rendering + events (minimal library to extend WebComponents, no build tools needed)
 
+![Describe Image Here](/example.png)
+
 ## Extend WebComponents with Flo:
 ```
 class Counter extends Flo {
