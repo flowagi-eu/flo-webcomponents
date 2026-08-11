@@ -1,19 +1,15 @@
 class ListCounters extends Flo {
 
-
     template() {
-
         return `
-
-  <div class="counters"></div>
-    <button id="setFirstTo10">Set First Counter to 10</button>
-    <button id="setSecondTo20">Set Second Counter to 20</button>
-    <button id="incrementAll">Increment All</button>
+	  <div class="counters"></div>
+	  <button id="setFirstTo10">Set First Counter to 10</button>
+	  <button id="setSecondTo20">Set Second Counter to 20</button>
+	  <button id="incrementAll">Increment All</button>
         `;
-
     }
 
-    render() {
+    mounted() {
 	    const container = this.$('.counters');
             const counters = [];
 
@@ -25,7 +21,6 @@ class ListCounters extends Flo {
             }
 
 
-            // --- Button Event Listeners ---
             this.$("#setFirstTo10").addEventListener("click", () => {
                 counters[0].count = 10;
                 counters[0].render(); // Manually call render
