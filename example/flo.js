@@ -11,11 +11,11 @@ export class Flo extends HTMLElement {
     connectedCallback() {
 
 	
-let style = "";
+let css = "";
 let template = "";
 
-if (typeof this.style === "function") {
-    style = this.style() ?? "";
+if (typeof this.css === "function") {
+    css = this.css() ?? "";
 }
 
 if (typeof this.template === "function") {
@@ -23,7 +23,7 @@ if (typeof this.template === "function") {
 }
 
         this.shadowRoot.innerHTML = `
-            <style>${style}</style>
+            <style>${css}</style>
             ${template}
         `;
 

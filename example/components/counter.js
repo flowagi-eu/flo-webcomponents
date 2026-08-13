@@ -2,7 +2,7 @@ class Counter extends Flo {
 
     count = 0;
 
-    style() {
+    css() {
 
         return `
             :host {
