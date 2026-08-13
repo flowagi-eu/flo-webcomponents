@@ -128,3 +128,32 @@ for (let i = 0; i < 2; i++) {
 
 ``` 
 
+For CSS, you can add a css() function:
+
+```
+css() {
+
+        return `
+            :host {
+                display:block;
+                width:250px;
+                padding:20px;
+                border:1px solid #ccc;
+                font-family:Arial;
+            }
+
+            button{
+                width:40px;
+            }
+
+            #count{
+                display:inline-block;
+                width:40px;
+                text-align:center;
+                font-size:22px;
+            }
+        `;
+
+    }
+
+```
