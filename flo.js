@@ -1,4 +1,4 @@
-class Flo extends HTMLElement {
+export class Flo extends HTMLElement {
 
     constructor() {
         super();
