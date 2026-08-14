@@ -28,6 +28,7 @@ class Counter extends Flo {
             this.count--;
             this.render();
         });
+	this.render(); // explicitly render on-demand
     }
 
     render() {

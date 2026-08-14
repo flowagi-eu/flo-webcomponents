@@ -37,7 +37,6 @@ class ListCounters extends Flo {
                     counter.render(); // Manually call render
                 });
             });
-
     }
 
 }

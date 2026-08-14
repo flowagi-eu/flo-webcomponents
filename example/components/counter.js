@@ -53,6 +53,7 @@ class Counter extends Flo {
             this.render();
         });
 
+	this.render();
     }
 
     render() {
