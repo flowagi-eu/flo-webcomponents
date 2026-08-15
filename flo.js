@@ -23,8 +23,11 @@ export class Flo extends HTMLElement {
             composed: true
         }));
     }
+
+    get parent() {
+        return this.getRootNode().host || this.parentNode;
+    }
 }
 
 window.Flo = Flo;
-window.fire = (name, detail = {}) =>
-    window.dispatchEvent(new CustomEvent(name, { detail }));
+window.fire = (name, detail = {}) => window.dispatchEvent(new CustomEvent(name, { detail }));
