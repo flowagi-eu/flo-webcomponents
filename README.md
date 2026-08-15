@@ -160,7 +160,7 @@ css() {
 
 ```
 
-For events, you can:
+For events, with Flo you can:
 - use the global function `fire(name,data)` and listen in any component to these events using `window.addEventListener`
 - or use `this.fire(name,data)` possibly with `this.parent.fire(name,component)` to fire events in the parent component, and in the parent component simply use `this.addEventListener`:
 
