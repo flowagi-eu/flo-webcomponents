@@ -162,4 +162,26 @@ css() {
 
 For events, you can:
 - use the global function `fire(name,data)` and listen in any component to these events using `window.addEventListener`
-- or use `this.fire(name,data)` possibly with `this.parent.fire(name,component)` to fire events in the parent component, and in the parent component simply use `this.addEventListener`('event-name', (e) => { /* e.details */ } );
+- or use `this.fire(name,data)` possibly with `this.parent.fire(name,component)` to fire events in the parent component, and in the parent component simply use `this.addEventListener`:
+
+```
+// Child
+mounted() {
+this.$("#addNode").addEventListener(
+            "click",
+            () => {
+                this.parent.fire("add-node", { custom: 'data'} );
+            }
+);
+}
+```
+
+```
+// Parent
+mounted() {
+	this.addEventListener(
+	    "add-node",
+	    (e) => this.addNode(e.details)
+	);
+}
+```
