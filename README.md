@@ -170,7 +170,7 @@ class Child extends Flo {
 		this.$("#addNode").addEventListener(
 			    "click",
 			    () => {
-				this.parent.fire("add-node", { custom: 'data'} );
+					this.parent.fire("add-node", { custom: 'data'} );
 			    }
 		);
 	}
