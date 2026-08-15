@@ -20,11 +20,14 @@ export class Flo extends HTMLElement {
         this.dispatchEvent(new CustomEvent(name, {
             detail,
             bubbles: true,
-            composed: true
+            composed: false
         }));
+    }
+
+    get parent() {
+        return this.getRootNode().host || this.parentNode;
     }
 }
 
 window.Flo = Flo;
-window.fire = (name, detail = {}) =>
-    window.dispatchEvent(new CustomEvent(name, { detail }));
+window.fire = (name, detail = {}) => window.dispatchEvent(new CustomEvent(name, { detail }));

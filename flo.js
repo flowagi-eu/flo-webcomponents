@@ -20,7 +20,7 @@ export class Flo extends HTMLElement {
         this.dispatchEvent(new CustomEvent(name, {
             detail,
             bubbles: true,
-            composed: true
+            composed: false
         }));
     }
 
