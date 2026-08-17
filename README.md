@@ -216,5 +216,5 @@ button {
 }
 ```
 
-The `var()` fallback is the component's default. **Only variables explicitly used by the component are exposed for theming.**
+The `var()` fallback is the component's default. Only variables explicitly used by the component are exposed for theming.
 
