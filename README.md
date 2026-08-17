@@ -187,3 +187,13 @@ class Parent extends Flo {
 	}
 }
 ```
+
+
+A common approach to setting multiple property values using JS (for example after .createElement) is by defining a `setData(data)` method for multiple keys. 
+
+For simple custom components defined in HTML you can also initiate property values via the data- property:
+```html
+<your-flo-element data-node-id="input""></your-flo-element>
+```
+
+The above example will set .nodeId to "input".
