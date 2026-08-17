@@ -4,7 +4,8 @@ export class Flo extends HTMLElement {
     }
 
     connectedCallback() {
-	this.shadowRoot.innerHTML = `<style>${this.css?.() ?? ""}</style>${this.template?.() ?? ""}`;
+	    this.shadowRoot.innerHTML = `<style>${this.css?.() ?? ""}</style>${this.template?.() ?? ""}`;
+        Object.keys(this.dataset).forEach(key => key !== "id" && typeof this[key] !== "function" && (this[key] = this.dataset[key]));
         this.mounted?.();
     }
 
