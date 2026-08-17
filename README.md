@@ -74,6 +74,7 @@ python3 -m http.server 8080
 ```
 
 ## Coding Conventions
+### Functionality
 When adding functions, like a new [Nyno Workflow](https://github.com/flowagi-eu/nyno), it's recommended to not use return statements, and instead directly set the component's variable(s), so re-rendering is easy:
 
 ```js
@@ -130,36 +131,6 @@ for (let i = 0; i < 2; i++) {
 
 ``` 
 
-For CSS, you can add a css() function:
-
-```
-css() {
-
-        return `
-            :host {
-                display:block;
-                width:250px;
-                padding:20px;
-                border:1px solid #ccc;
-                font-family:Arial;
-            }
-
-            button{
-                width:40px;
-            }
-
-            #count{
-                display:inline-block;
-                width:40px;
-                text-align:center;
-                font-size:22px;
-            }
-        `;
-
-    }
-
-```
-
 For events, with Flo Web Components you can:
 - use the global function `fire(name,data)` and listen in any component to these events using `window.addEventListener`
 - or use `this.fire(name,data)` possibly with `this.parent.fire(name,component)` to fire events in the parent component, and in the parent component simply use `this.addEventListener`:
@@ -197,3 +168,53 @@ For simple custom components defined in HTML you can also initiate property valu
 ```
 
 The above example will set `.nodeId` to "input". This works only once on initiation (not reactive), before `mounted()` is called, so we don't need to worry about any side effects.
+
+### CSS & Theme Variables
+
+For CSS, you can add a css() function:
+
+```
+css() {
+
+        return `
+            :host {
+                display:block;
+                width:250px;
+                padding:20px;
+                border:1px solid #ccc;
+                font-family:Arial;
+            }
+
+            button{
+                width:40px;
+            }
+
+            #count{
+                display:inline-block;
+                width:40px;
+                text-align:center;
+                font-size:22px;
+            }
+        `;
+
+    }
+
+```
+
+
+Flo uses **Shadow DOM for isolated component styles**. Global themes can still customize components through CSS variables.
+
+```css
+/* Component */
+button {
+    background: var(--btn-bg, #0b0c0f);
+}
+
+/* App theme */
+:root {
+    --btn-bg: #222;
+}
+```
+
+The `var()` fallback is the component's default. **Only variables explicitly used by the component are exposed for theming.**
+
