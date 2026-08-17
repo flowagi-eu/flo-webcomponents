@@ -196,4 +196,4 @@ For simple custom components defined in HTML you can also initiate property valu
 <your-flo-element data-node-id="input""></your-flo-element>
 ```
 
-The above example will set .nodeId to "input". This works only once on initiation (not reactive), so we don't need to worry about any side effects.
+The above example will set `.nodeId` to "input". This works only once on initiation (not reactive), so we don't need to worry about any side effects.
