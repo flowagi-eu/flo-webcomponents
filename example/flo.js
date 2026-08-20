@@ -6,7 +6,26 @@ export class Flo extends HTMLElement {
     connectedCallback() {
 	    this.shadowRoot.innerHTML = `<style>${this.css?.() ?? ""}</style>${this.template?.() ?? ""}`;
         Object.keys(this.dataset).forEach(key => key !== "id" && typeof this[key] !== "function" && (this[key] = this.dataset[key]));
+
+	this.bindInlineEvents();
         this.mounted?.();
+    }
+
+    bindInlineEvents() {
+    for (const el of this.shadowRoot.querySelectorAll("*")) {
+        for (const attr of [...el.attributes]) {
+            if (!attr.name.startsWith("on")) continue;
+
+            const eventName = attr.name.slice(2);
+            const code = attr.value;
+
+            el.removeAttribute(attr.name);
+
+            el.addEventListener(eventName, event => {
+                new Function("event", code).call(this, event);
+            });
+        }
+    }
     }
 
     $(selector) {
