@@ -36,6 +36,8 @@ class Counter extends Flo {
         this.$("#count").textContent = this.count;
     }
 }
+
+customElements.define("flo-counter", Counter);
 ```
 
 # Full Example (see also ./example):
