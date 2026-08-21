@@ -3,6 +3,12 @@ export class Flo extends HTMLElement {
         super().attachShadow({ mode: "open" });
     }
 
+    static create(props = {}) {
+        const el = new this();
+        Object.assign(el, props);
+        return el;
+    }
+
     connectedCallback() {
 	const template = this.template?.() ?? "";
         this.shadowRoot.innerHTML = `<style>${this.css?.() ?? ""}</style>${template}`;
