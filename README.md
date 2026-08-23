@@ -218,3 +218,32 @@ button {
 
 The `var()` fallback is the component's default. Only variables explicitly used by the component are exposed for theming.
 
+---
+
+
+# Flo Plugin System
+
+Need more functionality? 
+
+Create plugins for Web Components like [Flo Shapes (for Type Validation)](https://github.com/flowagi-eu/flo-plugin-shapes).  
+
+```js
+import { Flo } from "./flo.js";
+
+Flo.hooks.create.push(({ el, props }) => {
+  console.log("Created", el, props);
+});
+
+Flo.hooks.connected.push(({ el }) => {
+  console.log("Connected", el);
+});
+
+Flo.hooks.disconnected.push(({ el }) => {
+  console.log("Disconnected", el);
+});
+
+Flo.hooks.fire.push(({ el, name, detail }) => {
+  console.log("Event", name, detail);
+});
+```
+
