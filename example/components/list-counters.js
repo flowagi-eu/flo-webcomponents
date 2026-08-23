@@ -1,4 +1,4 @@
-class ListCounters extends Flo {
+export class ListCounters extends Flo {
 
     template() {
         return `

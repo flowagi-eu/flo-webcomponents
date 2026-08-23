@@ -1,4 +1,4 @@
-class Counter extends Flo {
+export class Counter extends Flo {
 
     count = 0;
 
