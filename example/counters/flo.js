@@ -21,7 +21,7 @@ export class Flo extends HTMLElement {
     connectedCallback() {
 	this.constructor.hooks.connected.forEach(fn => fn({el:this}));
 	const template = this.template?.() ?? "";
-        this.shadowRoot.innerHTML = `<style>${this.css?.() ?? ""}</style>${template}`;
+        this.shadowRoot.innerHTML = `<style>:host { all: initial; display: block; } ${this.css?.() ?? ""}</style>${template}`;
         Object.keys(this.dataset).forEach(key => key !== "id" && typeof this[key] !== "function" && (this[key] = this.dataset[key]));
 
 	if (/\bon[a-z]+\s*=/i.test(template)) {
