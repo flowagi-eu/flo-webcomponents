@@ -169,7 +169,7 @@ For simple custom components defined in HTML you can also initiate property valu
 
 The above example will set `.nodeId` to "input". This works only once on initiation (not reactive), before `mounted()` is called, so we don't need to worry about any side effects.
 
-### CSS & Theme Variables
+## CSS & Theme Variables
 
 For CSS, you can add a css() function:
 
@@ -220,9 +220,9 @@ The `var()` fallback is the component's default. Only variables explicitly used 
 
 ---
 
-# Inline Data & Events
+## Inline Data & Events
 
-## Inline Events
+### Inline Events
 
 Inline events let you define simple event behavior directly in the component template. Flo automatically detects `on*` attributes and turns them into event listeners, with the Flo component available as `this` and the native event available as `event`.
 
@@ -234,7 +234,7 @@ Inline events let you define simple event behavior directly in the component tem
 </template>
 ```
 
-## `data-*` Attributes
+### `data-*` Attributes
 
 `data-*` attributes provide a lightweight way to pass values from HTML into a Flo component. When connected, Flo copies these dataset values onto matching component properties, making them immediately available through `this`.
 
