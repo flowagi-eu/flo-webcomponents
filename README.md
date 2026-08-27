@@ -1,5 +1,5 @@
 # flo-webcomponents
-Flo is a minimal superclass to empower you to take back control over JavaScript & CSS (no build tools needed): 
+Flo is a minimal WebComponent superclass (no build tools needed): 
 - JavaScript: Take back control of rendering + events using WebComponents.
 - CSS: Flo Web Components are fully isolated (Shadow DOM + `all:initial;` reset)
 
