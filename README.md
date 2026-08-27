@@ -1,4 +1,4 @@
-# Flo Web Components helps you take back control over the frontend.
+# Take back control over the frontend.
 Flo is a minimal WebComponent superclass (no build tools needed): 
 - JavaScript: Take back control of rendering + events.
 - CSS: Flo Web Components are fully isolated (Shadow DOM + `all:initial;` reset)
