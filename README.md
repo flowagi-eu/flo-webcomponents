@@ -220,6 +220,43 @@ The `var()` fallback is the component's default. Only variables explicitly used 
 
 ---
 
+# Inline Data & Events
+
+## Inline Events
+
+Inline events let you define simple event behavior directly in the component template. Flo automatically detects `on*` attributes and turns them into event listeners, with the Flo component available as `this` and the native event available as `event`.
+
+```html
+<template>
+  <button onclick="this.fire('save', { value: 'Hello' })">
+    Save
+  </button>
+</template>
+```
+
+## `data-*` Attributes
+
+`data-*` attributes provide a lightweight way to pass values from HTML into a Flo component. When connected, Flo copies these dataset values onto matching component properties, making them immediately available through `this`.
+
+```html
+<my-card
+  data-title="Hello World"
+  data-count="5"
+  data-active="true">
+</my-card>
+```
+
+```js
+class MyCard extends Flo {
+  mounted() {
+    console.log(this.title);  // "Hello World"
+    console.log(this.count);  // "5"
+    console.log(this.active); // "true"
+  }
+}
+```
+
+
 
 # Flo Plugin System
 
