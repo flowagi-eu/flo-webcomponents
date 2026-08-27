@@ -139,7 +139,7 @@ for (let i = 0; i < 2; i++) {
 ``` 
 
 For events, with Flo Web Components you can:
-- use the global function `fire(name,data)` and listen in any component to these events using `window.addEventListener`
+- use the global function `fire(name,data)`
 - or use `this.fire(name,data)` possibly with `this.parent.fire(name,component)` to fire events in the parent component, and in the parent component simply use `this.addEventListener`:
 
 ```js
