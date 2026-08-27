@@ -202,7 +202,7 @@ css() {
 ```
 
 
-Flo uses **Shadow DOM for isolated component styles**. Global themes can still customize components through CSS variables.
+Flo uses Shadow DOM + `initial:all` for fully isolated component styles. Global themes can still customize components through CSS variables.
 
 ```css
 /* Component */
