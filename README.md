@@ -2,7 +2,7 @@
 Flo is a minimal WebComponent superclass (no build tools needed): 
 - JavaScript: Take back control of rendering + events.
 - CSS: Flo Web Components are fully isolated (Shadow DOM + `all:initial;` reset)
-- Result: Isolated Web Components without any side-effects.
+- Result: **Fully Isolated Web Components without any side-effects.**
 
 ---
 
